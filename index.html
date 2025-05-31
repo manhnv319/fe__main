@@ -73,7 +73,7 @@
         border-radius: 20px;
       }
 
-      .recipe__content__time {
+      .recipe__prep-time {
         background-color: var(--color-rose-50);
         padding: 20px;
         border-radius: 20px;
@@ -82,35 +82,33 @@
         font-weight: 400;
       }
 
-      .recipe__content__time h3 {
+      .recipe__prep-time h3 {
         color: var(--color-rose-800);
       }
 
-      .recipe__content__time__item {
+      .recipe__prep-time-item {
         margin: 15px 0;
         font-family: var(--font-family-outfit);
         font-weight: 400;
         color: var(--color-stone-600);
       }
 
-      .recipe__content__sub__title {
+      .recipe__section-title {
         font-family: var(--font-family-young-serif);
         font-size: 1.5rem;
         margin-top: 20px;
         color: var(--color-brown-800);
       }
 
-      .recipe__content__sub__item {
+      .recipe__section-item {
         margin: 15px 0;
         font-family: var(--font-family-outfit);
         font-weight: 400;
         color: var(--color-stone-600);
-      }
-      .recipe__content__sub__item {
         padding-left: 1.5em;
       }
 
-      .recipe__content__sub__item::marker {
+      .recipe__section-item ::marker {
         color: var(--color-brown-800);
         font-weight: bold;
       }
@@ -136,14 +134,14 @@
         border-bottom: 1px solid var(--color-stone-150);
       }
 
-      .nutrition__table__item {
+      .nutrition__item {
         font-family: var(--font-family-outfit);
         font-weight: 400;
         color: var(--color-stone-600);
         padding: 10px 10px 10px 20px;
       }
 
-      .nutrition__table__value {
+      .nutrition__value {
         font-family: var(--font-family-outfit);
         font-weight: 700;
         color: var(--color-brown-800);
@@ -172,31 +170,27 @@
           choice of cheese, vegetables, or meats.
         </p>
 
-        <div class="recipe__content__time">
+        <div class="recipe__prep-time">
           <h3>Preparation time</h3>
           <ul>
-            <li class="recipe__content__time__item">
+            <li class="recipe__prep-time-item">
               <b>Total:</b> Approximately 10 minutes
             </li>
-            <li class="recipe__content__time__item">
+            <li class="recipe__prep-time-item">
               <b>Preparation:</b> 5 minutes
             </li>
-            <li class="recipe__content__time__item">
-              <b>Cooking:</b> 5 minutes
-            </li>
+            <li class="recipe__prep-time-item"><b>Cooking:</b> 5 minutes</li>
           </ul>
         </div>
 
-        <div class="recipe__content__sub">
-          <h2 class="recipe__content__sub__title">Ingredients</h2>
+        <div class="recipe__section">
+          <h2 class="recipe__section-title">Ingredients</h2>
           <ul>
-            <li class="recipe__content__sub__item">2-3 large eggs</li>
-            <li class="recipe__content__sub__item">Salt, to taste</li>
-            <li class="recipe__content__sub__item">Pepper, to taste</li>
-            <li class="recipe__content__sub__item">
-              1 tablespoon of butter or oil
-            </li>
-            <li class="recipe__content__sub__item">
+            <li class="recipe__section-item">2-3 large eggs</li>
+            <li class="recipe__section-item">Salt, to taste</li>
+            <li class="recipe__section-item">Pepper, to taste</li>
+            <li class="recipe__section-item">1 tablespoon of butter or oil</li>
+            <li class="recipe__section-item">
               Optional fillings: cheese, diced vegetables, cooked meats, herbs
             </li>
           </ul>
@@ -204,34 +198,34 @@
 
         <hr class="divider" />
 
-        <div class="recipe__content__sub">
-          <h2 class="recipe__content__sub__title">Instructions</h2>
+        <div class="recipe__section">
+          <h2 class="recipe__section-title">Instructions</h2>
           <ol>
-            <li class="recipe__content__sub__item instruction">
+            <li class="recipe__section-item recipe__instruction-item">
               <b>Beat the eggs:</b> In a bowl, beat the eggs with a pinch of
               salt and pepper until they are well mixed. You can add a
               tablespoon of water or milk for a fluffier texture.
             </li>
-            <li class="recipe__content__sub__item instruction">
+            <li class="recipe__section-item recipe__instruction-item">
               <b>Heat the pan:</b> Place a non-stick frying pan over medium heat
               and add butter or oil.
             </li>
-            <li class="recipe__content__sub__item instruction">
+            <li class="recipe__section-item recipe__instruction-item">
               <b>Cook the omelette:</b> Once the butter is melted and bubbling,
               pour in the eggs. Tilt the pan to ensure the eggs evenly coat the
               surface.
             </li>
-            <li class="recipe__content__sub__item instruction">
+            <li class="recipe__section-item recipe__instruction-item">
               <b>Add fillings (optional):</b> When the eggs begin to set at the
               edges but are still slightly runny in the middle, sprinkle your
               chosen fillings over one half of the omelette.
             </li>
-            <li class="recipe__content__sub__item instruction">
+            <li class="recipe__section-item recipe__instruction-item">
               <b>Fold and serve:</b> As the omelette continues to cook,
               carefully lift one edge and fold it over the fillings. Let it cook
               for another minute, then slide it onto a plate.
             </li>
-            <li class="recipe__content__sub__item instruction">
+            <li class="recipe__section-item recipe__instruction-item">
               <b>Enjoy:</b> Serve hot, with additional salt and pepper if
               needed.
             </li>
@@ -240,8 +234,8 @@
 
         <hr class="divider" />
 
-        <div class="recipe__content__sub nutrition">
-          <h2 class="recipe__content__sub__title">Nutrition</h2>
+        <div class="recipe__section nutrition">
+          <h2 class="recipe__section-title">Nutrition</h2>
           <p>
             The table below shows nutritional values per serving without the
             additional fillings.
@@ -249,20 +243,20 @@
           <table>
             <tbody>
               <tr>
-                <td class="nutrition__table__item">Calories</td>
-                <td class="nutrition__table__value">277kcal</td>
+                <td class="nutrition__item">Calories</td>
+                <td class="nutrition__value">277kcal</td>
               </tr>
               <tr>
-                <td class="nutrition__table__item">Carbs</td>
-                <td class="nutrition__table__value">0g</td>
+                <td class="nutrition__item">Carbs</td>
+                <td class="nutrition__value">0g</td>
               </tr>
               <tr>
-                <td class="nutrition__table__item">Protein</td>
-                <td class="nutrition__table__value">20g</td>
+                <td class="nutrition__item">Protein</td>
+                <td class="nutrition__value">20g</td>
               </tr>
               <tr>
-                <td class="nutrition__table__item">Fat</td>
-                <td class="nutrition__table__value">22g</td>
+                <td class="nutrition__item">Fat</td>
+                <td class="nutrition__value">22g</td>
               </tr>
             </tbody>
           </table>
