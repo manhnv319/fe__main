@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Young+Serif&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Social links profile</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      :root {
+        --color-green: hsl(75, 94%, 57%);
+        --color-white: hsl(0, 0%, 100%);
+
+        --color-gray-700: hsl(0, 0%, 20%);
+        --color-gray-800: hsl(0, 0%, 12%);
+        --color-gray-900: hsl(0, 0%, 8%);
+
+        --font-family-inter: "Inter", sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: var(--font-family-inter);
+      }
+      p {
+        font-size: 14px;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: var(--color-gray-900);
+      }
+
+      .profile {
+        text-align: center;
+        color: var(--color-white);
+        background-color: var(--color-gray-800);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        width: 350px;
+        height: 600px;
+      }
+
+      .profile-image {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+      }
+
+      .profile-name {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .profile-location {
+        font-size: 14px;
+        color: var(--color-green);
+        margin-bottom: 10px;
+      }
+
+      .profile-title {
+        font-size: 14px;
+        font-style: italic;
+        margin-bottom: 20px;
+      }
+
+      .social-links {
+        margin-top: 20px;
+      }
+
+      .social-link__element {
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--color-gray-700);
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+
+      .social-link {
+        color: var(--color-white);
+        text-decoration: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        font-size: 14px;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+
+      .social-link__element:hover {
+        background-color: var(--color-green);
+        cursor: pointer;
+      }
+
+      .social-link__element:hover .social-link {
+        color: var(--color-gray-900);
+      }
+
+      @media (max-width: 390px) {
+        .profile {
+          width: 90%;
+          height: auto;
+        }
+        .profile-image {
+          width: 80px;
+          height: 80px;
+        }
+        .profile-name {
+          font-size: 20px;
+        }
+        .profile-location {
+          font-size: 12px;
+        }
+        .profile-title {
+          font-size: 12px;
+        }
+        .social-link {
+          font-size: 12px;
+          padding: 8px 12px;
+        }
+        .social-link__element {
+          margin-bottom: 8px;
+        }
+        .social-links {
+          margin-top: 15px;
+        }
+        .container {
+          padding: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="profile">
+        <img
+          src="./assets/images/avatar-jessica.jpeg"
+          alt="Profile picture of Jessica Randall"
+          class="profile-image"
+        />
+        <h1 class="profile-name">Jessica Randall</h1>
+        <h3 class="profile-location">London, United Kingdom</h3>
+        <p class="profile-title">"Front-end developer and avid reader."</p>
+        <div class="social-links">
+          <div class="social-link__element">
+            <a
+              href=""
+              class="social-link github"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GitHub</a
+            >
+          </div>
+          <div class="social-link__element">
+            <a
+              href=""
+              class="social-link frontend-mentor"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Frontend Mentor</a
+            >
+          </div>
+          <div class="social-link__element">
+            <a
+              href=""
+              class="social-link linkedin"
+              target="_blank"
+              rel="noopener noreferrer"
+              >LinkedIn</a
+            >
+          </div>
+          <div class="social-link__element">
+            <a
+              href=""
+              class="social-link twitter"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Twitter</a
+            >
+          </div>
+          <div class="social-link__element">
+            <a
+              href=""
+              class="social-link instagram"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Instagram</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
