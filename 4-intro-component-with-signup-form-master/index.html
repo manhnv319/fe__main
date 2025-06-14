@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Young+Serif&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Intro component with sign up form</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      :root {
+        --color-red: hsl(0, 100%, 74%);
+        --color-green: hsl(154, 59%, 51%);
+        --color-blue: hsl(248, 32%, 49%);
+        --color-dark-blue: hsl(249, 10%, 26%);
+        --color-grayish-blue: hsl(246, 25%, 77%);
+
+        --font-size: 16px;
+        --font-weight-small: 400;
+        --font-weight-medium: 500;
+        --font-weight-large: 600;
+        --font-weight-xlarge: 700;
+
+        --font-family-poppins: "Poppins", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        position: relative;
+        z-index: -10;
+        background-color: var(--color-red);
+      }
+
+      .container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        color: white;
+        font-family: var(--font-family-poppins);
+        position: relative;
+        z-index: 1;
+      }
+
+      .bg img {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+      }
+
+      .content {
+        max-width: 400px;
+        margin-right: 1%;
+        padding: 20px;
+      }
+
+      .content h1 {
+        font-size: 2.5rem;
+        font-weight: var(--font-weight-xlarge);
+        margin-bottom: 2rem;
+        line-height: 1.1;
+      }
+
+      .form-container {
+        width: 40%;
+        max-width: 550px;
+        padding: 20px;
+      }
+
+      .form-container h2 {
+        font-size: var(--font-size);
+        font-weight: var(--font-weight-small);
+        margin-bottom: 1.5rem;
+        background-color: var(--color-blue);
+        border-radius: 10px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 8px 6px rgba(0, 0, 0, 0.2);
+        padding: 10px;
+      }
+
+      .form-container form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .form-body {
+        padding: 20px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 8px 6px rgba(0, 0, 0, 0.2);
+        height: 450px;
+      }
+
+      .form-container input {
+        padding: 15px;
+        margin-bottom: 1rem;
+        border: 1px solid var(--color-grayish-blue);
+        border-radius: 5px;
+        font-size: var(--font-size);
+        font-weight: var(--font-weight-small);
+      }
+
+      .form-container button {
+        padding: 15px;
+        background-color: var(--color-green);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: var(--font-size);
+        font-weight: var(--font-weight-large);
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        box-shadow: 0 6px 6px rgba(0, 250, 154, 0.1);
+      }
+
+      .form-container .terms {
+        font-size: 0.6rem;
+        color: var(--color-grayish-blue);
+        margin-top: 1rem;
+        text-align: center;
+      }
+
+      .form-container .terms a {
+        color: var(--color-red);
+        text-decoration: none;
+        font-weight: var(--font-weight-medium);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg">
+      <img
+        src="./images/bg-intro-desktop.png"
+        alt="Background image of a person coding on a laptop"
+        class="background-desktop"
+      />
+      <!-- <img
+          src="./images/bg-intro-mobile.png"
+          alt="Background image of a person coding on a laptop"
+          class="background-mobile"
+        /> -->
+    </div>
+    <div class="container">
+      <div class="content">
+        <h1>Learn to code by watching others</h1>
+        <p>
+          See how experienced developers solve problems in real-time. Watching
+          scripted tutorials is great, but understanding how developers think is
+          invaluable.
+        </p>
+      </div>
+
+      <div class="form-container">
+        <h2><b>Try it free 7 days</b>&nbsp;then $20/mo. thereafter</h2>
+        <div class="form-body">
+          <form>
+            <input
+              type="text"
+              placeholder="First Name"
+              required
+              aria-label="First Name"
+            />
+            <input
+              type="text"
+              placeholder="Last Name"
+              required
+              aria-label="Last Name"
+            />
+            <input
+              type="email"
+              placeholder="Email Address"
+              required
+              aria-label="Email Address"
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              required
+              aria-label="Password"
+            />
+            <button type="submit">CLAIM YOUR FREE TRIAL</button>
+          </form>
+          <p class="terms">
+            By clicking the button, you are agreeing to our
+            <a href="#">Terms and Services</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
