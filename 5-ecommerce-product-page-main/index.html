@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kumbh+Sans:wght@100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Young+Serif&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | E-commerce product page</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      :root {
+        --color-primary-orange: hsl(26, 100%, 55%);
+        --color-primary-pale-orange: (25, 100%, 94%);
+        --color-neutral-very-dark-blue: hsl(220, 13%, 13%);
+        --color-neutral-dark-grayish-blue: hsl(219, 9%, 45%);
+        --color-neutral-grayish-blue: hsl(220, 14%, 75%);
+        --color-neutral-light-grayish-blue: hsl(223, 64%, 98%);
+        --color-neutral-white: hsl(0, 0%, 100%);
+        --color-neutral-black-overlay: hsla(0, 0%, 0%, 0.75);
+
+        --font-size-xl: 1rem; /* 16px */
+        --font-weight-small: 400;
+        --font-weight-large: 700;
+        --font-family-kumbh: "Kumbh Sans";
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: var(--font-family-kumbh), sans-serif;
+        /* background-color: var(--color-neutral-light-grayish-blue); */
+        color: var(--color-neutral-very-dark-blue);
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        margin: 0 8rem;
+        background-color: var(--color-neutral-white);
+        border-bottom: 1px solid var(--color-neutral-light-grayish-blue);
+      }
+      .header-left {
+        display: flex;
+        align-items: center;
+      }
+      .logo img {
+        width: 100px;
+      }
+      .nav-links ul {
+        display: flex;
+        list-style: none;
+        margin-left: 2rem;
+      }
+      .nav-links li {
+        margin-right: 1.5rem;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: var(--color-neutral-very-dark-blue);
+        font-weight: var(--font-weight-small);
+      }
+      .nav-links a:hover {
+        color: var(--color-primary-orange);
+      }
+      .header-right {
+        display: flex;
+        align-items: center;
+      }
+      .cart {
+        position: relative;
+        margin-right: 2rem;
+      }
+      .cart img {
+        width: 24px;
+        height: 24px;
+      }
+      .cart-count {
+        position: absolute;
+        top: -5px;
+        right: -10px;
+        background-color: var(--color-primary-orange);
+        color: var(--color-neutral-white);
+        border-radius: 50%;
+        padding: 2px 6px;
+        font-size: var(--font-size-xl);
+      }
+      .profile img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+
+      .product-details {
+        display: flex;
+        padding: 2rem;
+        max-width: 1200px;
+        margin: auto;
+      }
+      .product-image {
+        flex: 1;
+        position: relative;
+      }
+      .product-image img {
+        width: 100%;
+        border-radius: 10px;
+      }
+      .thumbnails {
+        display: flex;
+        margin-top: 1rem;
+      }
+      .thumbnails img {
+        width: 60px;
+        height: 60px;
+        margin-right: 10px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      .thumbnails img:hover {
+        border: 2px solid var(--color-primary-orange);
+      }
+      .product-info {
+        flex: 1;
+        padding-left: 2rem;
+      }
+      .product-info h1 {
+        font-size: 1.5rem;
+        color: var(--color-neutral-very-dark-blue);
+        margin-bottom: 0.5rem;
+      }
+      .product-info h2 {
+        font-size: 1.25rem;
+        color: var(--color-neutral-dark-grayish-blue);
+        margin-bottom: 1rem;
+      }
+      .product-info p {
+        color: var(--color-neutral-dark-grayish-blue);
+        margin-bottom: 1.5rem;
+      }
+      .product-price {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+      }
+      .product-price .current-price {
+        font-size: 1.5rem;
+        color: var(--color-primary-orange);
+        font-weight: var(--font-weight-large);
+        margin-right: 1rem;
+      }
+      .product-price .discount {
+        background-color: var(--color-primary-pale-orange);
+        color: var(--color-primary-orange);
+        padding: 2px 6px;
+        border-radius: 5px;
+        font-weight: var(--font-weight-large);
+      }
+      .product-price .original-price {
+        text-decoration: line-through;
+        color: var(--color-neutral-grayish-blue);
+      }
+      .quantity {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.5rem;
+      }
+      .quantity button {
+        background-color: var(--color-neutral-light-grayish-blue);
+        border: none;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        font-size: var(--font-size-xl);
+      }
+      .quantity button:hover {
+        background-color: var(--color-neutral-grayish-blue);
+      }
+      .quantity-value {
+        margin: 0 1rem;
+        font-size: var(--font-size-xl);
+        color: var(--color-neutral-very-dark-blue);
+      }
+      .add-to-cart {
+        background-color: var(--color-primary-orange);
+        color: var(--color-neutral-white);
+        border: none;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        font-weight: var(--font-weight-large);
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      .add-to-cart:hover {
+        background-color: darken(var(--color-primary-orange), 10%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-left">
+        <div class="logo">
+          <img src="./images/logo.svg" alt="Sneaker Company Logo" />
+        </div>
+        <nav class="nav-links">
+          <ul>
+            <li><a href="#">Collections</a></li>
+            <li><a href="#">Men</a></li>
+            <li><a href="#">Women</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="header-right">
+        <div class="cart">
+          <img src="./images/icon-cart.svg" alt="Cart Icon" />
+          <span class="cart-count">0</span>
+        </div>
+        <div class="profile">
+          <img src="./images/image-avatar.png" alt="Profile Image" />
+        </div>
+      </div>
+    </div>
+
+    <div class="product-details">
+      <div class="product-image">
+        <img src="./images/image-product-1.jpg" alt="Sneaker Image" />
+        <div class="thumbnails">
+          <img
+            src="./images/image-product-1-thumbnail.jpg"
+            alt="Sneaker Thumbnail 1"
+          />
+          <img
+            src="./images/image-product-2-thumbnail.jpg"
+            alt="Sneaker Thumbnail 2"
+          />
+          <img
+            src="./images/image-product-3-thumbnail.jpg"
+            alt="Sneaker Thumbnail 3"
+          />
+          <img
+            src="./images/image-product-4-thumbnail.jpg"
+            alt="Sneaker Thumbnail 4"
+          />
+        </div>
+      </div>
+      <div class="product-info">
+        <h1>Sneaker Company</h1>
+        <h2>Fall Limited Edition Sneakers</h2>
+        <p>
+          These low-profile sneakers are your perfect casual wear companion.
+          Featuring a durable rubber outer sole, they’ll withstand everything
+          the weather can offer.
+        </p>
+        <div class="product-price">
+          <span class="current-price">$125.00</span>
+          <span class="discount">50%</span>
+        </div>
+        <span class="original-price">$250.00</span>
+
+        <div class="quantity">
+          <button class="decrease">-</button>
+          <span class="quantity-value">0</span>
+          <button class="increase">+</button>
+        </div>
+        <button class="add-to-cart">Add to cart</button>
+      </div>
+    </div>
+  </body>
+</html>
